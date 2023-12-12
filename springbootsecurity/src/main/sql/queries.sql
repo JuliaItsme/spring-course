@@ -1,0 +1,7 @@
+SELECT * FROM Person;
+
+DROP TABLE person;
+
+ALTER TABLE Person ADD COLUMN role VARCHAR(100) NOT NULL;
+
+UPDATE Person SET role='ROLE_ADMIN' WHERE id = 1;

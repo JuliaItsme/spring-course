@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+   <context:component-scan base-package="ru.goryacheva.springcourse"/>
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+    <!--    <context:component-scan base-package="ru.goryacheva.homeworktwo"/> -->
+
+
+  <!-- test -->
+    <!--<bean id="testBean"
+          class="ru.goryacheva.springcourse.TestBean">
+        <constructor-arg value="Julia"/>
+    </bean>-->
+
+<!-- inversion of control -->
+    <!--<bean id="musicBean"
+          class="ru.goryacheva.springcourse.ClassicalMusic">
+    </bean>-->
+
+<!-- dependency injection ч.1-->
+    <!--<bean id="musicBean"
+          class="ru.goryacheva.springcourse.ClassicalMusic">
+    </bean>
+    <bean id="musicPlayer"
+              class="ru.goryacheva.springcourse.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>-->
+
+<!-- dependency injection ч.2-->
+    <!--<bean id="musicBean"
+          class="ru.goryacheva.springcourse.ClassicalMusic">
+    </bean>
+    <bean id="musicPlayer"
+          class="ru.goryacheva.springcourse.MusicPlayer">
+        <property name="music" ref="musicBean"/>-->
+        <!--<property name="name" value="Some name"/>-->
+        <!--<property name="volume" value="50"/>-->
+    <!--<property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+    </bean>-->
+
+<!-- дз -->
+    <!--<bean id="musicBeanOne"
+          class="ru.goryacheva.homework.ClassicalMusic">
+    </bean>
+    <bean id="musicBeanTwo"
+          class="ru.goryacheva.homework.RapMusic">
+    </bean>
+
+    <bean id="musicBeanThree"
+          class="ru.goryacheva.homework.RockMusic">
+    </bean>
+    <bean id="musicPlayer"
+          class="ru.goryacheva.homework.MusicPlayer"
+          scope="prototype">
+        <property name="musicList">
+            <list>
+                <ref bean="musicBeanOne"/>
+                <ref bean="musicBeanTwo"/>
+                <ref bean="musicBeanThree"/>
+            </list>
+        </property>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+    </bean>-->
+
+<!-- scope -->
+    <!--<bean id="musicBean"
+          class="ru.goryacheva.springcourse.ClassicalMusic">
+    </bean>
+    <bean id="musicPlayer"
+          class="ru.goryacheva.springcourse.MusicPlayer"
+          scope="prototype">
+        <property name="music" ref="musicBean"/>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+    </bean>-->
+
+<!-- жизненный цикл bean (init, destroy, factory-method -->
+    <!--<bean id="musicBean"
+          class="ru.goryacheva.springcourse.ClassicalMusic"
+          scope="prototype"
+          init-method="doInit"
+          destroy-method="doDestroy"
+          factory-method="getClassicalMusic">
+    </bean>-->
+</beans>
